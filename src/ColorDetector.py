@@ -5,15 +5,21 @@
 import pygame
 import sys
 import os
+import time
 
 pygame.init()
 os.system('cls')
 surface = pygame.display.set_mode( (500, 500) )
 last_color = None
-if len(sys.argv) == 2:
-    img = pygame.image.load(sys.argv[1])
+
+if len(sys.argv) > 1:
+    try:
+        img = pygame.image.load(sys.argv[1])
+    except pygame.error:
+        print('Cannot load image:', sys.argv[1])
+        exit()
 else:
-    print("Inserisci un immagine")
+    print("Insert an image")
     exit()
 surface.blit(img,(0,0))
 
@@ -29,5 +35,4 @@ while True:
         last_color = color
 
     pygame.display.update()
-
 pygame.quit()
