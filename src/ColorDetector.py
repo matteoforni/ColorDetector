@@ -1,3 +1,7 @@
+#author matteoforni
+#date: 19.12.2018
+#Program that print the RGB color of the pixel under the mouse cursor.
+
 import pygame
 import sys
 import os
