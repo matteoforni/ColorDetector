@@ -6,19 +6,16 @@ import pygame
 import sys
 import os
 import time
-from tkinter import *
 
 pygame.init()
 os.system('cls')
 surface = pygame.display.set_mode( (500, 500) )
 last_color = None
-root = Tk()
-frame = Frame(root)
-frame.pack()
-
 
 if len(sys.argv) > 1:
     try:
+        title = "Color detector: " + sys.argv[1]
+        pygame.display.set_caption(title)
         img = pygame.image.load(sys.argv[1])
     except pygame.error:
         print('Cannot load image:', sys.argv[1])
@@ -40,5 +37,4 @@ while True:
         last_color = color
 
     pygame.display.update()
-root.mainloop()
 pygame.quit()
