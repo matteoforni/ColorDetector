@@ -5,8 +5,11 @@
 import pygame
 import sys
 import os
+from tkinter import *
+from tkinter import filedialog
 
-img = input("Insert an image: ")
+root = Tk()
+img =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
 pygame.init()
 os.system('cls')
 surface = pygame.display.set_mode( (500, 500) )
@@ -19,7 +22,7 @@ try:
 except pygame.error:
     print('Cannot load image:', img)
     exit()
-    
+
 surface.blit(img,(0,0))
 
 while True:
