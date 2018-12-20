@@ -8,8 +8,14 @@ import os
 from tkinter import *
 from tkinter import filedialog
 
+
+ftypes = [
+    ('all files', '.*'),
+    ('jpg files', '*.jpg'),
+    ('png files', '*.png')
+]
 root = Tk()
-img =  filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+img =  filedialog.askopenfilename(initialdir = "/", title = "Select file", filetypes = ftypes)
 pygame.init()
 os.system('cls')
 surface = pygame.display.set_mode( (500, 500) )
